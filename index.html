@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Version 0.6</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#0f0f0f,#1a1a1a,#111);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Floating Background Glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  background: radial-gradient(circle, rgba(255,0,150,0.15), transparent);
+  top:-200px;
+  left:-200px;
+  animation: float 10s infinite alternate ease-in-out;
+  z-index:-1;
+}
+
+@keyframes float{
+  from{ transform: translate(0,0);}
+  to{ transform: translate(200px,150px);}
+}
+
+/* Section Styling */
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  opacity:0;
+  transform:translateY(40px);
+  transition: all 1s ease;
+}
+
+section.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  padding:40px;
+  border-radius:20px;
+  max-width:700px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.05);
+}
+
+h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+h2{
+  margin-bottom:20px;
+}
+
+p{
+  margin:8px 0;
+  line-height:1.6;
+  font-size:18px;
+}
+
+/* Button */
+button{
+  margin-top:25px;
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:white;
+  color:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff0077;
+  color:white;
+  transform:scale(1.05);
+}
+
+/* Hidden Message */
+#secret{
+  display:none;
+  margin-top:20px;
+  font-style:italic;
+  opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+  <div class="card">
+    <h1>Version 0.6 – Still Choosing You</h1>
+    <p>You don’t like dramatic gestures.</p>
+    <p>So I made something quiet instead.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>6 Months With You</h2>
+    <p>Month 1 – Pretending we weren’t interested</p>
+    <p>Month 2 – Mild attachment denial</p>
+    <p>Month 3 – Comfort started</p>
+    <p>Month 4 – Real conversations</p>
+    <p>Month 5 – Survived things</p>
+    <p>Month 6 – Still here</p>
+    <p><strong>That’s not luck. That’s choice.</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Things I Tolerate About You</h2>
+    <p>Your fake “I don’t care” attitude</p>
+    <p>Your sarcasm level 100</p>
+    <p>The way you pretend you’re emotionally unavailable</p>
+    <p><strong>And I’d still pick you.</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Something You Won’t Admit</h2>
+    <p>You act unbothered.</p>
+    <p>But you stay.</p>
+    <p>And staying is louder than anything you say.</p>
+
+    <button onclick="reveal()">Click if you're not impressed</button>
+    <div id="secret">
+      You’re low maintenance emotionally.  
+      High value though.  
+      And yeah… I’m still choosing you.
+    </div>
+  </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      sec.classList.add("active");
+    }
+  });
+});
+
+function reveal(){
+  document.getElementById("secret").style.display="block";
+}
+</script>
+
+</body>
+</html>
