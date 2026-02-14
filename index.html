@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Version 0.6</title>
+<title>For Ishika 💗</title>
 
 <style>
 *{
@@ -14,164 +14,205 @@
 }
 
 body{
-  background: linear-gradient(135deg,#0f0f0f,#1a1a1a,#111);
+  background: linear-gradient(135deg,#ffb6d9,#ff7eb3,#ff4f8b);
   color:white;
   overflow-x:hidden;
+  text-align:center;
 }
 
-/* Floating Background Glow */
-body::before{
-  content:"";
+/* Floating Hearts */
+.heart{
   position:fixed;
-  width:600px;
-  height:600px;
-  background: radial-gradient(circle, rgba(255,0,150,0.15), transparent);
-  top:-200px;
-  left:-200px;
-  animation: float 10s infinite alternate ease-in-out;
+  color:rgba(255,255,255,0.5);
+  animation: floatUp 8s linear infinite;
   z-index:-1;
 }
 
-@keyframes float{
-  from{ transform: translate(0,0);}
-  to{ transform: translate(200px,150px);}
+@keyframes floatUp{
+  from{ transform: translateY(100vh); opacity:1;}
+  to{ transform: translateY(-10vh); opacity:0;}
 }
 
-/* Section Styling */
-section{
-  min-height:100vh;
+/* Password Screen */
+#lockScreen{
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+}
+
+input{
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  margin-top:15px;
   text-align:center;
-  padding:40px;
-  opacity:0;
-  transform:translateY(40px);
-  transition: all 1s ease;
+  width:220px;
 }
 
-section.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.card{
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  padding:40px;
-  border-radius:20px;
-  max-width:700px;
-  box-shadow: 0 0 40px rgba(255,255,255,0.05);
-}
-
-h1{
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-h2{
-  margin-bottom:20px;
-}
-
-p{
-  margin:8px 0;
-  line-height:1.6;
-  font-size:18px;
-}
-
-/* Button */
 button{
-  margin-top:25px;
-  padding:12px 25px;
+  margin-top:15px;
+  padding:10px 25px;
   border:none;
   border-radius:25px;
   background:white;
-  color:black;
+  color:#ff4f8b;
+  font-weight:bold;
   cursor:pointer;
   transition:0.3s;
 }
 
 button:hover{
-  background:#ff0077;
-  color:white;
-  transform:scale(1.05);
+  background:#ffe3f0;
 }
 
-/* Hidden Message */
-#secret{
+#mainContent{
   display:none;
-  margin-top:20px;
-  font-style:italic;
-  opacity:0.8;
+  padding:50px 20px;
 }
 
+section{
+  margin-bottom:70px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease;
+}
+
+section.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:18px;
+  margin:10px auto;
+  line-height:1.7;
+  max-width:700px;
+}
+
+img{
+  width:260px;
+  border-radius:15px;
+  margin:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
 </style>
 </head>
 
 <body>
 
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+  <h1>Private Access 💌</h1>
+  <p>Enter the password to unlock</p>
+  <input type="password" id="password" placeholder="DD/MM/YYYY">
+  <button onclick="unlock()">Unlock</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<button onclick="toggleMusic()">Pause / Play Music 🎵</button>
+
 <section>
-  <div class="card">
-    <h1>Version 0.6 – Still Choosing You</h1>
-    <p>You don’t like dramatic gestures.</p>
-    <p>So I made something quiet instead.</p>
-  </div>
+<h1>For Ishika 💗</h1>
+<p>I know you don’t really believe in Valentine’s Day or these “special days.”</p>
+<p>You’ve always said love doesn’t need a calendar reminder.</p>
+<p>But I just wanted an excuse — not because the day matters — but because you do.</p>
+<p>So this isn’t about Valentine’s Day.</p>
+<p>It’s about surprising you in my own quiet way.</p>
 </section>
 
 <section>
-  <div class="card">
-    <h2>6 Months With You</h2>
-    <p>Month 1 – Pretending we weren’t interested</p>
-    <p>Month 2 – Mild attachment denial</p>
-    <p>Month 3 – Comfort started</p>
-    <p>Month 4 – Real conversations</p>
-    <p>Month 5 – Survived things</p>
-    <p>Month 6 – Still here</p>
-    <p><strong>That’s not luck. That’s choice.</strong></p>
-  </div>
+<h1>Six Months With You</h1>
+<p>We’ve been together for six months.</p>
+<p>And honestly… I don’t even know how time moved this fast.</p>
+<p>Somewhere between late-night talks and random teasing, it just flew.</p>
+<p>It’s easy to be with you.</p>
+<p>Easy to talk to you.</p>
+<p>Easy to spend time with you, Ishika.</p>
+<p><strong>And that kind of comfort? That’s rare.</strong></p>
 </section>
 
 <section>
-  <div class="card">
-    <h2>Things I Tolerate About You</h2>
-    <p>Your fake “I don’t care” attitude</p>
-    <p>Your sarcasm level 100</p>
-    <p>The way you pretend you’re emotionally unavailable</p>
-    <p><strong>And I’d still pick you.</strong></p>
-  </div>
+<h1>The Real You</h1>
+<p>I know you show that “I don’t care” attitude.</p>
+<p>You act strong. Untouchable.</p>
+<p>But I’ve seen the small things.</p>
+<p>The way you check in. The way you stay.</p>
+<p>And staying means more than dramatic words ever could.</p>
+<p>So yeah… I know you care more than you admit.</p>
+<p>And I know you love me more than you’ll ever say.</p>
 </section>
 
 <section>
-  <div class="card">
-    <h2>Something You Won’t Admit</h2>
-    <p>You act unbothered.</p>
-    <p>But you stay.</p>
-    <p>And staying is louder than anything you say.</p>
+<h1>That Diary 💖</h1>
+<p>That diary you gave me…</p>
+<p>I don’t even think you realise what that meant.</p>
+<p>It wasn’t loud. It wasn’t flashy.</p>
+<p>It was thoughtful. Personal. Deep.</p>
+<p><strong>Just like you.</strong></p>
 
-    <button onclick="reveal()">Click if you're not impressed</button>
-    <div id="secret">
-      You’re low maintenance emotionally.  
-      High value though.  
-      And yeah… I’m still choosing you.
-    </div>
-  </div>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
 </section>
+
+<section>
+<h1>And One More Thing</h1>
+<p>I don’t need a special day to choose you.</p>
+<p><strong>I just do. Every day.</strong></p>
+</section>
+
+</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-const sections = document.querySelectorAll("section");
+function unlock(){
+  var pass = document.getElementById("password").value;
+  if(pass === "31/08/2004"){
+    document.getElementById("lockScreen").style.display="none";
+    document.getElementById("mainContent").style.display="block";
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){
-      sec.classList.add("active");
-    }
-  });
-});
+    // Play music
+    document.getElementById("bgMusic").play();
 
-function reveal(){
-  document.getElementById("secret").style.display="block";
+    // Animate sections
+    document.querySelectorAll("section").forEach((sec,i)=>{
+      setTimeout(()=>{sec.classList.add("visible");}, i*500);
+    });
+  } else {
+    alert("Wrong password 😉");
+  }
+}
+
+function toggleMusic(){
+  var music = document.getElementById("bgMusic");
+  if(music.paused){
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+/* Floating Hearts Generator */
+for(let i=0;i<25;i++){
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💗";
+  heart.style.left = Math.random()*100+"vw";
+  heart.style.fontSize = (Math.random()*20+15)+"px";
+  heart.style.animationDuration = (Math.random()*5+5)+"s";
+  document.body.appendChild(heart);
 }
 </script>
 
